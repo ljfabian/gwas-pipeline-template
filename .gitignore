@@ -1,0 +1,6 @@
+*.csv
+*.log
+*.tsv
+data
+logs
+00_config.json

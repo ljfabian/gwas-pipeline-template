@@ -1,0 +1,30 @@
+cluster-cancel: scancel %j # does not actually work!
+
+cluster:
+  sbatch
+    --partition=short,test,compute
+    --account=sscm028544
+    --nodes={resources.nodes}
+    --ntasks-per-node={resources.ntasks_per_node}
+    --cpus-per-task={resources.cpus_per_task}
+    --time={resources.hours}:00:00
+    --mem={resources.mem_mb}
+    --job-name={rule}-{wildcards}
+    --output=slurm_logs/%j_{rule}{wildcards}.out
+default-resources:
+  # - time= 1 # "01:00:00"
+  - hours= 1
+  - ntasks_per_node=1
+  - nodes=1
+  - cpus_per_task=1
+  - mem_mb=10000
+jobs: 100
+restart-times: 0
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+local-cores: 1
+latency-wait: 10
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+scheduler: greedy

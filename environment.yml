@@ -1,0 +1,12 @@
+name: smk7
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  - plotly
+  - python=3.11
+  - python-kaleido
+  - scipy
+  - snakemake==7.26
+
+prefix: "/user/work/pn22681/miniforge3/envs/smk7"

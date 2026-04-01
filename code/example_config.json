@@ -1,0 +1,16 @@
+{
+    "slurm_account": "yourBPgroup",
+    "slurm_partition": "yourBPpartition",
+    "topmed_release_path_plink": "/path/to/omics/data/plink",
+    "temp_path": "/path/to/project/data/temp",
+    "intermediates_path": "/path/to/project/data/intermediate",
+    "LD_prunefile": "/path/to/project/data/intermediate/prunefile",
+    "PCA_filename": "/path/to/project/data/intermediate/PCA",
+    "total_pcs_calculated": 10,
+    "sample_subset_file": "/path/to/project/data/intermediate/sample_list.txt",
+    "high_ld_regions": "/path/to/project/data/intermediate/high-LD-regions-hg38-GRCh38.txt",
+    "imputation_backbone_snplist": "/path/to/project/data/intermediate/backbone_snplist.txt",
+    "pheno_data": "/path/to/project/data/pheno/epds_pheno_woc.tsv",
+    "covar_data": "/path/to/project/data/pheno/epds_covars_woc.csv",
+    "results_path": "/path/to/project/data/output"
+}
