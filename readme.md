@@ -125,7 +125,7 @@ Steps ran within this GWAS:
         - pred = output `data/intermediates/regenie_step1/egg_pred.list` from step 1 of regenie
 
 Diagram of pipeline:
-![Pipeline flowchart](./code/dag.pdf)
+![Pipeline flowchart](code/dag.png)
 
 ## 2. Output/results
 Summary statistics are outputted from regenie step 2. No further QC or filtering has been conducted on the regenie output. 
@@ -137,7 +137,3 @@ Result files will be produced per phenotype included.
 
 Result columns: 
 CHROM GENPOS ID ALLELE0 ALLELE1 A1FREQ N TEST BETA SE CHISQ LOG10P EXTRA
-
-Principal components plot:
-Existing refers to the original information 
-<img src=./code/pc_test/re-scored.png width="800" height="800">
