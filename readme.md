@@ -124,14 +124,11 @@ Steps ran within this GWAS:
         - pThresh = *0.05* - this should be the standard but can be altered via Snakefile easily. 
         - pred = output `data/intermediates/regenie_step1/egg_pred.list` from step 1 of regenie
 
-Diagram of pipeline:
+Diagram of pipeline: <br>
 ![Pipeline flowchart](code/dag.png)
 
 ## 2. Output/results
 Summary statistics are outputted from regenie step 2. No further QC or filtering has been conducted on the regenie output. 
-
-Pipeline run completion: 16/02/2025
-Analyst: Laurie Fabian
 
 Result files will be produced per phenotype included. 
 
