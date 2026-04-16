@@ -1,5 +1,5 @@
 # GWAS pipeline (TEMPLATE)
-Basic snakemake workflow for generating and running a GWAS on ALSPAC imputed omics data. 
+Basic snakemake workflow for generating and running a GWAS on ALSPAC imputed omics data. This likely needs to be adapted before being ran, as this just follows the defaults used in other work. Your milage may vary. 
 
 This is aimed for Direct Users (DUs), but could be adapted for non-DU researchers. There may be additional steps involved here, which are flagged below. 
 
@@ -14,12 +14,12 @@ software requiring custom installation:
 
 For running in University of Bristols HPC system, you can use a custom installation of mamba via miniconda, following [ACRC instructions](https://www.acrc.bris.ac.uk/protected/hpc-docs/software/own_software.html). You can use the `environment.yaml` to generate a suitable environment to run the pipeline: 
 
-Generate mamba a copy of the env in `env/smk7.yaml`:
+Generate mamba a copy of the env in `environment.yaml`:
 ```bash
-mamba env create -f env/smk7.yaml
+mamba env create -f environment.yaml
 ```
 
-Then activate newly created yaml env:
+Then activate newly created yaml env (change the smk7 to whatever you call the environment):
 ```bash
 mamba activate smk7
 ``` 
@@ -80,7 +80,7 @@ If you are not a DU, you will receive a freeze of the omics data, which means yo
 
 ### General QC Rules: 
 
-Steps 1, 2 and 3 were merged together to a standardised single rule. This update is due to standard pgen/psam/pvar file formats being used as starting point rather than bgen to save compute and time. These versions were generated from VCF file conversion. 
+The previous steps 1, 2 and 3 were merged together to a standardised single rule. This update is due to standard pgen/psam/pvar file formats being used as starting point rather than bgen to save compute and time. These versions were generated from VCF file conversion. 
 
 Rules for running each job found in the [Snakefile](code/Snakefile). All rules currently get ran, but can always be edited out manually if they aren't required. For example, step 4a & 4b for imputing related individuals previously excluded from the PCs, or step 4.5 if the plink2 file formats used contain both FID and IID (gi_topmed_g0m_g1/release/2026-03-09 does not contain these by accident).
 
