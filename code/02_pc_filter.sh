@@ -62,6 +62,6 @@ echo 'number of snps filtered to:'
 wc -l $output.pvar
 
 # clean up
-if [[ -e "$output.psam" ]]; do
+if [[ -e "$output.psam" ]]; then
     rm ${output}_mafr2.*
 fi
