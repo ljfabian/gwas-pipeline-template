@@ -98,6 +98,26 @@ rule sample_filter:
         2> {log.err}
     '''
 
+# Optional rule pre 02
+# Fetch genotyped SNPs from imputation, using plink files
+rule typed_snps:
+    input:
+        pvar=f'{config["topmed_release_path_plink"]}/topmed_aln_poly.pvar'
+    output:
+        typed_snps=f'{config["intermediates_path"]}/typed_snps_plink.txt'
+    resources:
+        cores=1,
+        mem_mb=2000,
+        ntasks=1,
+        hours=0.25,
+        slurm_account=config['slurm_account']#,        
+    log:
+        log = 'logs/01a_typed_snps/typed_snps.log',
+        err = 'logs/01a_typed_snps/typed_snps.err'
+    shell:'''
+    grep -v "^#" {input.pvar} | grep 'TYPED' | awk -F'\t' '{{print $3}}' > {output.typed_snps}
+    '''
+
 
 ### RULE 02
 # apply specific filters to make only high certainty snps for the PC. This will significantly reduce number of snps and run time of PC analysis, plus make it all more reliable
