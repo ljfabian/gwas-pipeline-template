@@ -1,7 +1,7 @@
 '''
-Title   : B4604 Snakefile for Post partum depression in ALSPAC
+Title   : GWAS-pipeline-template
 Author  : Laurie Fabian 
-About   : Genetic determinants of perinatal depression and its long-term impact on the family unit in ALSPAC - GWAS in collaboration with Biogen
+About   : Example GWAS pipeline script for work in ALSPAC
 '''
 
 # call example 
@@ -38,7 +38,7 @@ Features + description:
 - "PCA_filename": Fileset path for the PCs. Default produced from the dataset is PCA.
 - "sample_subset_file": Path to plink format file of non-withdrawn G1 individuals to filter dataset to.
     - Likely f'{intermediates_path}/sample_subset.txt'.
-    - Used in step 02. 
+    - Used in step 01. 
 - "high_ld_regions": File detailing regions of high LD in hg38. 
     - https://github.com/meyer-lab-cshl/plinkQC/blob/master/inst/extdata/high-LD-regions-hg38-GRCh38.txt 
 - "pheno_data": Phenotype data. 
@@ -479,3 +479,7 @@ rule analysis_part2:
         > {log.log} \
         2> {log.err}
     '''
+
+### RULE 07
+# Create a qq plot, calc genomic lambda and manhattan plot for each pheno
+# not created currently. Script in check_results/check.py
